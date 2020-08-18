@@ -1,0 +1,33 @@
+[{
+    "Name": "000webhost",
+    "Title": "000webhost",
+    "Domain": "000webhost.com",
+    "BreachDate": "2015-03-01",
+    "AddedDate": "2015-10-26T23:35:45Z",
+    "ModifiedDate": "2017-12-10T21:44:27Z",
+    "PwnCount": 14936670,
+    "Description": "In approximately March 2015, the free web hosting provider <a href=\"http://www.troyhunt.com/2015/10/breaches-traders-plain-text-passwords.html\" target=\"_blank\" rel=\"noopener\">000webhost suffered a major data breach</a> that exposed almost 15 million customer records. The data was sold and traded before 000webhost was alerted in October. The breach included names, email addresses and plain text passwords.",
+    "LogoPath": "https://haveibeenpwned.com/Content/Images/PwnedLogos/000webhost.png",
+    "DataClasses": ["Email addresses", "IP addresses", "Names", "Passwords"],
+    "IsVerified": true,
+    "IsFabricated": false,
+    "IsSensitive": false,
+    "IsRetired": false,
+    "IsSpamList": false
+}, {
+    "Name": "126",
+    "Title": "126",
+    "Domain": "126.com",
+    "BreachDate": "2012-01-01",
+    "AddedDate": "2016-10-08T07:46:05Z",
+    "ModifiedDate": "2016-10-08T07:46:05Z",
+    "PwnCount": 6414191,
+    "Description": "In approximately 2012, its alleged that the Chinese email service known as <a href=\"http://126.com\" target=\"_blank\" rel=\"noopener\">126</a> suffered a data breach that impacted 6.4 million subscribers. Whilst there is evidence that the data is legitimate, due to the difficulty of emphatically verifying the Chinese breach it has been flagged as &quot;unverified&quot;. The data in the breach contains email addresses and plain text passwords. <a href=\"https://www.troyhunt.com/handling-chinese-data-breaches-in-have-i-been-pwned/\" target=\"_blank\" rel=\"noopener\">Read more about Chinese data breaches in Have I Been Pwned.</a>",
+    "LogoPath": "https://haveibeenpwned.com/Content/Images/PwnedLogos/126.png",
+    "DataClasses": ["Email addresses", "Passwords"],
+    "IsVerified": false,
+    "IsFabricated": false,
+    "IsSensitive": false,
+    "IsRetired": false,
+    "IsSpamList": false
+}]
