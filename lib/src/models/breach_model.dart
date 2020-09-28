@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class BreachModel {
   final String name;
   final String title;
@@ -31,6 +33,51 @@ class BreachModel {
         isRetired = parsedJson["IsRetired"],
         isSpamList = parsedJson["IsSpamList"],
         logoPath = parsedJson["LogoPath"];
+
+  BreachModel.fromDb(Map<String, dynamic> parsedJson)
+      : name = parsedJson["name"],
+        title = parsedJson["title"],
+        domain = parsedJson["domain"],
+        breachDate = parsedJson["breachDate"] != null
+            ? DateTime.fromMillisecondsSinceEpoch(parsedJson["breachDate"])
+            : null,
+        addedDate = parsedJson["addedDate"] != null
+            ? DateTime.fromMillisecondsSinceEpoch(parsedJson["addedDate"])
+            : null,
+        modifiedDate = parsedJson["modifiedDate"] != null
+            ? DateTime.fromMillisecondsSinceEpoch(parsedJson["modifiedDate"])
+            : null,
+        pwnCount = parsedJson["pwnCount"],
+        description = parsedJson["description"],
+        dataClasses = parsedJson["dataClasses"] != null
+            ? List<String>.from(jsonDecode(parsedJson["dataClasses"]))
+            : [],
+        isVerified = parsedJson["isVerified"] == 1,
+        isFabricated = parsedJson["isFabricated"] == 1,
+        isSensitive = parsedJson["isSensitive"] == 1,
+        isRetired = parsedJson["isRetired"] == 1,
+        isSpamList = parsedJson["isSpamList"] == 1,
+        logoPath = parsedJson["logoPath"];
+
+  Map<String, dynamic> toDbMap() {
+    return {
+      "name": name,
+      "title": title,
+      "domain": domain,
+      "breachDate": breachDate?.millisecondsSinceEpoch,
+      "addedDate": addedDate?.millisecondsSinceEpoch,
+      "modifiedDate": modifiedDate?.millisecondsSinceEpoch,
+      "pwnCount": pwnCount,
+      "description": description,
+      "dataClasses": jsonEncode(dataClasses),
+      "isVerified": isVerified ? 1 : 0,
+      "isFabricated": isFabricated ? 1 : 0,
+      "isSensitive": isSensitive ? 1 : 0,
+      "isRetired": isRetired ? 1 : 0,
+      "isSpamList": isSpamList ? 1 : 0,
+      "logoPath": logoPath,
+    };
+  }
 
   @override
   String toString() {

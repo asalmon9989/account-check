@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import './src/services/api.dart';
 import './src/App.dart';
+import './register.dart';
 
 void main() {
+  setupLocator();
   runApp(App());
 }
 

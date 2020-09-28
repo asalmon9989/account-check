@@ -14,6 +14,25 @@ class PasteModel {
             : null,
         emailCount = parsedJson["EmailCount"];
 
+  PasteModel.fromDb(Map<String, dynamic> parsedJson)
+      : source = parsedJson["source"],
+        id = parsedJson["sd"],
+        title = parsedJson["title"] ?? '',
+        date = parsedJson["date"] != null
+            ? DateTime.fromMillisecondsSinceEpoch(parsedJson["date"])
+            : null,
+        emailCount = parsedJson["emailCount"];
+
+  Map<String, dynamic> toDbMap() {
+    return {
+      "source": source,
+      "id": id,
+      "title": title,
+      "date": date?.millisecondsSinceEpoch,
+      "emailCount": emailCount
+    };
+  }
+
   @override
   String toString() {
     return '''\n

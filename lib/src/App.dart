@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:pwn_check/src/views/passwords_view.dart';
 import './views/accounts_view.dart';
+import 'viewmodels/accounts_viewmodel.dart';
 
 class App extends StatefulWidget {
   @override
@@ -14,6 +16,8 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Pwn Check",
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      darkTheme: ThemeData.dark(),
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -22,9 +26,9 @@ class _AppState extends State<App> {
             onTap: onTabTap,
             items: buildBottomNavigationBarItems(),
           ),
-          appBar: AppBar(
-            title: Text("Pwn Check"),
-          ),
+          // appBar: AppBar(
+          //   title: Text("Pwn Check"),
+          // ),
           body: buildTabBar()[_currentIndex],
         ),
       ),
@@ -51,7 +55,10 @@ class _AppState extends State<App> {
 
   List<Widget> buildTabBar() {
     return <Widget>[
-      AccountsView(),
+      ChangeNotifierProvider<AccountsViewModel>(
+        create: (context) => AccountsViewModel(),
+        child: AccountsView(),
+      ),
       PasswordsView(),
     ];
   }
