@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:pwn_check/src/models/account_model.dart';
 import 'package:pwn_check/src/models/breach_model.dart';
